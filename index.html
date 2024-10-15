@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>underScore - Coming Soon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button id="menuButton">☰</button>
+    <div id="headerWrapper" class="hidden">
+      <header>
+        <div class="input-wrapper">
+          <span>[</span>
+          <input type="text" placeholder="__________" class="custom-input" id="passwordInput">
+          <span>]</span>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <img src="logo.png" alt="Logo" class="logo animated-logo">
+      
+      <p class="coming-soon hidden">
+        We are under development<br><br>
+        ~~~<br><br>
+        Check back later
+      </p>
+    </main>
+
+    <footer>
+      <ul class="footer-links">
+        <!-- <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li> -->
+      </ul>
+    </footer>
+  </div>
+  <div id="celebrationOverlay" class="hidden">
+    <div class="celebration-content">
+      <h2>You are a gem!</h2>
+      <p>More will be coming soon!!</p>
+      <button id="closeOverlay">Close</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener('pageshow', function(event) {
+      var logo = document.querySelector('.animated-logo');
+      logo.style.animation = 'none';
+      setTimeout(function() {
+        logo.style.animation = '';
+      }, 10);
+    });
+
+    document.getElementById('menuButton').addEventListener('click', function() {
+      var headerWrapper = document.getElementById('headerWrapper');
+      headerWrapper.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
